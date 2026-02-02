@@ -15,7 +15,8 @@
     "strictNullChecks": false,
     "strictPropertyInitialization": false,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "types": ["vite/client"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

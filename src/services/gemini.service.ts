@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { GoogleGenAI } from '@google/genai';
 
+declare var process: any;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +10,7 @@ export class GeminiService {
   private ai: GoogleGenAI;
 
   constructor() {
-    this.ai = new GoogleGenAI({ apiKey: process.env['API_KEY'] });
+    this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   }
 
   async analyzeFoodImage(base64Image: string): Promise<any> {
@@ -75,7 +77,7 @@ export class GeminiService {
       }
 
       const response = await this.ai.models.generateContent({
-        model: 'gemini-2.5-flash-lite',
+        model: 'gemini-2.5-flash',
         contents: message,
         config: {
           systemInstruction: systemInstruction
