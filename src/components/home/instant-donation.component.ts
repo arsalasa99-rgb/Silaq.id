@@ -1,5 +1,5 @@
 
-import { Component, signal, output, inject, Input } from '@angular/core';
+import { Component, signal, output, inject, input, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { StateService } from '../../services/state.service';
@@ -85,9 +85,7 @@ export class InstantDonationComponent {
   onOpenMap = output<void>();
 
   // Input to update location from parent if map picked
-  @Input() set externalLocation(val: string) {
-      if(val) this.instantForm.pickupLocation = val;
-  }
+  externalLocation = input<string | undefined>(undefined);
 
   instantForm = {
       item: '',
@@ -95,6 +93,13 @@ export class InstantDonationComponent {
       targetRecipient: 'Siapapun',
       pickupLocation: ''
   };
+
+  constructor() {
+    effect(() => {
+        const val = this.externalLocation();
+        if(val) this.instantForm.pickupLocation = val;
+    });
+  }
 
   adjustQty(delta: number) {
       const newQty = this.instantForm.quantity + delta;

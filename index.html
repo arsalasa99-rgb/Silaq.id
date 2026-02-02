@@ -11,26 +11,21 @@
         --ios-ease: cubic-bezier(0.32, 0.72, 0, 1);
         
         /* SASAK EARTHY GOLD PALETTE */
-        --bg-primary: #D0AC77;         /* Sasak Gold (Main Background) */
-        --bg-secondary: #E6DDC5;       /* Earthy Beige */
+        --bg-primary: #D0AC77;         /* Sasak Gold */
+        --bg-secondary: #E6DDC5;       
         --bg-elevated: #FFFFFF;        
         
         --text-primary: #1C1C1E;       
         --text-secondary: #3A3A3C;     
         --text-tertiary: #636366;      
         
-        /* BRAND COLORS - UPDATED TO ELEGANT GOLD */
-        --action-primary: #BFA15F;     /* NEW: Elegant Gold */
-        --action-pressed: #9C824A;     /* Darker Gold for press state */
+        /* BRAND COLORS */
+        --action-primary: #BFA15F;     
+        --action-pressed: #9C824A;     
         
-        --state-success: #5D7A45;      /* Forest Green */
-        --state-warning: #D98C36;      /* Deep Gold/Orange */
-        --state-error: #9E2A2B;        /* Deep Red */
-        
-        --color-sage: #7A8B68;         
-        --cultural-accent: #8C6A43;    
-        
-        --border-color: rgba(255, 255, 255, 0.3);
+        --state-success: #5D7A45;      
+        --state-warning: #D98C36;      
+        --state-error: #9E2A2B;        
       }
       
       body {
@@ -41,38 +36,21 @@
         min-height: 100vh;
       }
 
-      /* iOS Glass Surface */
+      /* Glass Surface */
       .glass-panel {
         background: rgba(255, 255, 255, 0.45);
-        backdrop-filter: blur(30px) saturate(140%);
-        -webkit-backdrop-filter: blur(30px) saturate(140%);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
         border: 1px solid rgba(255, 255, 255, 0.4);
-        box-shadow: 
-          0 4px 24px -1px rgba(0, 0, 0, 0.05), 
-          0 1px 2px 0 rgba(0, 0, 0, 0.02);
+        box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.05);
       }
       
-      /* New "iOS 26" Future Glass */
-      .glass-ios-26 {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 100%);
-        backdrop-filter: blur(40px);
-        -webkit-backdrop-filter: blur(40px);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 
-          0 20px 40px -10px rgba(0, 0, 0, 0.1),
-          inset 0 0 20px rgba(255, 255, 255, 0.5);
-      }
-
-      /* 3D Button Base */
       .btn-3d {
         position: relative;
         transition: transform 0.2s var(--ios-ease), box-shadow 0.2s;
       }
-      .btn-3d:active {
-        transform: scale(0.96);
-      }
+      .btn-3d:active { transform: scale(0.96); }
       
-      /* Primary Action Button */
       .btn-primary {
         background: var(--action-primary);
         color: white;
@@ -81,20 +59,7 @@
           inset 0 1px 0 rgba(255, 255, 255, 0.3);
         border: 1px solid rgba(0, 0, 0, 0.05);
       }
-      .btn-primary:active {
-        background: var(--action-pressed);
-      }
-
-      /* Secondary Button */
-      .btn-secondary {
-        background: rgba(255, 255, 255, 0.7);
-        color: var(--text-primary);
-        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-        border: 1px solid rgba(255,255,255,0.6);
-        backdrop-filter: blur(10px);
-      }
       
-      /* Input Fields - Optimized for Gold Background */
       .input-luxury {
         background: rgba(255, 255, 255, 0.85);
         border: 1px solid rgba(255, 255, 255, 0.6);
@@ -103,9 +68,6 @@
         box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         transition: all 0.2s;
       }
-      .input-luxury::placeholder {
-        color: var(--text-tertiary);
-      }
       .input-luxury:focus {
         background: #FFFFFF;
         border-color: var(--action-primary);
@@ -113,15 +75,10 @@
         outline: none;
       }
       
-      /* Utilities */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .pb-safe {
-        padding-bottom: env(safe-area-inset-bottom, 20px);
-      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
     </style>
-<script type="importmap">
+  <script type="importmap">
 {
   "imports": {
     "rxjs": "https://esm.sh/rxjs@^7.8.2?conditions=es2015",
