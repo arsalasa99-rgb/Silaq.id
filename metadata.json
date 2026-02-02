@@ -1,0 +1,8 @@
+{
+  "name": "SILAQ.ID 1.4",
+  "description": "Platform donasi makanan dan pengelolaan limbah organik berbasis budaya Sasak Lombok.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
